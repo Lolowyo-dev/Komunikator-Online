@@ -1,0 +1,196 @@
+main {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: #f0f2f5;
+}
+
+img {
+  object-fit: scale-down;
+}
+
+.chat-wraper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#chat-messages {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex: 1;
+  padding: 1.5rem 1rem 0 1rem;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+}
+
+/* Message styles */
+.message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.message.sent {
+  justify-content: flex-end;
+}
+
+.message-content {
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  word-break: break-word;
+}
+
+.sent .message-content {
+  background-color: #4f46e5;
+  color: white;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.received .message-content {
+  background-color: #e5e7eb;
+  color: #1f2937;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.message-meta {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.sent .message-meta {
+  text-align: right;
+}
+
+/* General container styling */
+.chat-container {
+  display: flex;
+  position: sticky;
+  align-self: flex-end;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: auto;
+}
+
+/* Message form styling */
+.message-form {
+  width: 100%;
+}
+
+/* Message input container */
+.message-input-container {
+  display: flex;
+  align-items: flex-end;
+  background-color: #f0f2f5;
+  padding: 8px;
+  border-radius: 24px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 16px;
+  max-width: 100%;
+}
+
+/* Textarea input styling */
+#messageInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 10px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #333;
+  border-radius: 24px;
+  overflow-y: auto; /* Allow vertical scrolling when max height is reached */
+  max-height: 150px; /* Maximum height (adjust as needed) */
+  line-height: 1.5; /* Ensure consistent line spacing */
+}
+
+/* Send button styling */
+#sendButton {
+  background-color: #0084ff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin-left: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+#sendButton svg {
+  fill: #fff;
+}
+
+#sendButton:hover {
+  background-color: #0073e6;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .message-input-container {
+    margin: 8px;
+  }
+
+  #messageInput {
+    font-size: 14px;
+  }
+}
+
+img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* Sidebar styles */
+#friend-list-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 300px;
+  z-index: 50;
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  #friend-list-sidebar {
+    position: relative;
+    transform: translateX(0) !important;
+  }
+}
+
+/* Main content styles */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.chat-area {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+  .main-content {
+    width: 100%;
+  }
+}
